@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
 import { widthLogging } from "@/middlewares/withLogging";
 import { widthIpRestriction } from "@//middlewares/widthIpRestriction";
+import withAuth from "@/middlewares/withAuth";
 
-export default widthLogging(widthIpRestriction(() => NextResponse.next()));
+export default widthLogging(widthIpRestriction(withAuth));
